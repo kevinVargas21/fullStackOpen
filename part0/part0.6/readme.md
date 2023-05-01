@@ -8,7 +8,7 @@ go to https://www.websequencediagrams.com/ and replace the text with following l
 
 ```
 note over browser:
-user create a new note
+user creates a new note
 end note
 
 

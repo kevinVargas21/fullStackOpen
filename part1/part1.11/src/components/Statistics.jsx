@@ -25,22 +25,24 @@ const Statistics = (props) => {
     return (
         <>
             <table>
-
-                <tr>
-                    <th> Statistics </th>
-                </tr>
-
+                <thead>
+                    <tr>
+                        <th> Statistics </th>
+                    </tr>
+                </thead>
 
 
 
                 {(props.total === 0)
                     ?
-                    <tr>
-                        <td> No feedback given</td>
-                    </tr>
-
+                    <tbody>
+                        <tr>
+                            <td> No feedback given</td>
+                        </tr>
+                    </tbody>
                     :
-                    <>
+
+                    <tbody>
                         <tr>
                             <StatisticLine review="Good" />
                             <StatisticLine review={props.good} />
@@ -69,8 +71,9 @@ const Statistics = (props) => {
                         <tr>
                             <StatisticLine review="Average" />
                             <StatisticLine review={props.average()} />
-                        </tr>                        
-                    </>
+                        </tr>
+                    </tbody>
+
                 }
             </table>
 
@@ -79,4 +82,3 @@ const Statistics = (props) => {
 }
 
 export default Statistics;
-

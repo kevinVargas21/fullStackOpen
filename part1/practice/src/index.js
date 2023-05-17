@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import Statistics, { average, positive, feedBack } from './components/Statistics';
 import FeedbackBtn from './components/FeedbackBtn';
+import Prueba from './components/Prueba';
 
 const App = () => {
   const [good, setGood] = useState(0);
@@ -72,6 +73,9 @@ const App = () => {
       {values.map((value, index) => {
         return <FeedbackBtn name={references[index]} function={() => feedBack(value)} />
       })}
+
+
+      <Prueba/>
     </>
   )
 }

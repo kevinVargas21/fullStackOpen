@@ -1,11 +1,11 @@
-import React  from 'react'
-import Note from './components/Note'
+import React from 'react'
 import Course from './components/Course'
 
 const App = () => {
-    const course = {
-      id: 1,
+  const courses = [
+    {
       name: 'Half Stack application development',
+      id: 1,
       parts: [
         {
           name: 'Fundamentals of React',
@@ -28,10 +28,30 @@ const App = () => {
           id: 4,
         },
       ],
-    }
-  
-    return <Course course={course} />
-  }
-  
-  export default App
-  
+    },
+    {
+      name: 'Node.js',
+      id: 2,
+      parts: [
+        {
+          name: 'Routing',
+          exercises: 3,
+          id: 1,
+        },
+        {
+          name: 'Middlewares',
+          exercises: 7,
+          id: 2,
+        },
+      ],
+    },
+  ];
+
+  return (
+    <div>
+      <Course courses={courses} />
+    </div>
+  );
+};
+
+export default App;

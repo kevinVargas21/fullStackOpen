@@ -1,21 +1,38 @@
 import React from 'react';
 
-const Course = ({ course }) => {
-  const totalExercises = course.parts.reduce((x, list) =>
-      x + list.exercises
-  , 0)
+const totalExercises = (course) => {
+    return course.parts.reduce((x, part) => x + part.exercises, 0);
+};
 
-  return (
-      <div>
-          <h1>{course.name}</h1>
-          {course.parts.map((part) => (
-              <p key={part.id}>
-                  {part.name} {part.exercises}
-              </p>
-          ))}
-          <p>Total of {totalExercises} exercises </p>
-      </div>
-  );
+
+
+const Course = ({ courses }) => {
+
+
+
+    return (
+        <div>
+            <h1>Web development curriculum</h1>
+
+            {courses.map((course) => (
+                <div key={course.id}>
+                    <h2> {course.name}</h2>
+
+                    {course.parts.map((part) => (
+                        <>
+                            <p key={part.id}>
+                                {part.name} {part.exercises}
+                            </p>
+
+                        </>
+
+                    ))}
+                    <h3>Total of {totalExercises(course)} exercises </h3>
+                </div>
+            ))}
+
+        </div>
+    );
 };
 
 export default Course;
